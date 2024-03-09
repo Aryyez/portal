@@ -16,7 +16,6 @@
             background-color: #000;
             color: #fff;
             overflow: hidden;
-            position: relative;
         }
         .container {
             text-align: center;
@@ -27,15 +26,40 @@
             transition: transform 0.3s ease;
             position: relative;
             z-index: 1;
-            animation: shake 0.1s infinite alternate;
         }
         .container:hover {
             transform: scale(1.02);
-            animation: none;
         }
-        @keyframes shake {
-            0% { transform: translate(-2px, -2px); }
-            100% { transform: translate(2px, 2px); }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 18px;
+        }
+        a:hover {
+            background-color: #007bff;
+            color: #fff;
         }
         .header {
             position: absolute;
@@ -56,44 +80,12 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            animation: bgmove 20s infinite linear;
+            filter: blur(10px);
         }
         .background img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(5px);
-        }
-        @keyframes bgmove {
-            0% { transform: translate(-5px, -5px); }
-            50% { transform: translate(5px, 5px); }
-            100% { transform: translate(-5px, -5px); }
-        }
-        .option {
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.5s ease;
-        }
-        .container:hover .option {
-            opacity: 1;
-        }
-        .option a {
-            display: inline-block;
-            padding: 12px 20px;
-            border: 2px solid #007bff;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-size: 18px;
-        }
-        .option a:hover {
-            background-color: #007bff;
-            color: #fff;
         }
     </style>
 </head>
@@ -107,10 +99,10 @@
     <div class="container">
         <h1>Willkommen beim Portal</h1>
         <p>Bitte wählen Sie eine Option:</p>
-        <div class="option">
-            <a href="https://portfolio.demhasaj.net" target="_blank">Portfolio</a>
-            <a href="https://demhasajkey.ch" target="_blank">Vaultwarden</a>
-        </div>
+        <ul>
+            <li><a href="https://portfolio.demhasaj.net" target="_blank">Portfolio</a></li>
+            <li><a href="https://demhasajkey.ch" target="_blank">Vaultwarden</a></li>
+        </ul>
     </div>
 </body>
 </html>
