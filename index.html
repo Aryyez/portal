@@ -7,33 +7,34 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: radial-gradient(circle, #ffffff, #e6e6e6);
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
         }
         .container {
             text-align: center;
-            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.8);
             border-radius: 8px;
             padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         .container:hover {
             transform: scale(1.02);
         }
         h1 {
-            color: #333;
             font-size: 32px;
             margin-bottom: 20px;
         }
         p {
-            color: #666;
             margin-bottom: 20px;
             font-size: 18px;
         }
@@ -63,15 +64,39 @@
         .header {
             position: absolute;
             top: 20px;
-            left: 20px;
-            color: #333;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 32px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: slide 30s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 </head>
 <body>
+    <div class="background">
+        <img src="background.jpg" alt="Background">
+    </div>
     <div class="header">
         <span>Portal</span>
     </div>
